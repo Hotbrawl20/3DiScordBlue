@@ -16,6 +16,7 @@ If something is wrong, contact the creator on Discord: cheuble#4952
 * UI and port by [cheuble](https://github.com/cheuble)
 * Network features by [Rinnegatamante](https://github.com/Rinnegatamante/) (from lpp3ds) 
 * Blue theme by NicoAICP (or Hotbrawl20)
+
 **All the original VitaCord staff:**
 * coderx3 (devingDev)
 * Arkanite
