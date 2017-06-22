@@ -19,18 +19,18 @@
 void D3DSGUI::drawBottomScreen()
 {
 	try {
-		sf2d_draw_rectangle(0, 0, 320, 240, RGBA8(0x36, 0x39, 0x3E, 0xFF));
+		sf2d_draw_rectangle(0, 0, 320, 240, RGBA8(0x61, 0x61, 0xF2, 0xFF));
 		sf2d_draw_texture(menuImage, 0, 0);
-		sf2d_draw_rectangle(0, 200, 320, 40, RGBA8(0x41, 0x44, 0x49, 0xFF));
+		sf2d_draw_rectangle(0, 200, 320, 40, RGBA8(0x42, 0x42, 0xA6, 0xFF));
 		if (discordPtr->currentGuild != 0) {
 			sftd_draw_text(fontGuilds, 74, 15, RGBA8(255, 255, 255, 255), 22, std::string("#" + discordPtr->guilds[discordPtr->currentGuild].channels[discordPtr->currentChannel].name).c_str());
 			text = converter.from_bytes(wrap(discordPtr->guilds[discordPtr->currentGuild].channels[discordPtr->currentChannel].topic.c_str(), fontText, 13, 246));
 			sftd_draw_wtext(fontText, 74, 50, RGBA8(255, 255, 255, 230), 13, text.c_str());
-			sftd_draw_text(pgf, 20, 210, RGBA8(0x8B, 0x90, 0x96, 0xFF), 15, std::string("Message #" + discordPtr->guilds[discordPtr->currentGuild].channels[discordPtr->currentChannel].name).c_str());
+			sftd_draw_text(pgf, 20, 210, RGBA8(0xDE, 0xDE, 0xDE, 0xFF), 15, std::string("Message #" + discordPtr->guilds[discordPtr->currentGuild].channels[discordPtr->currentChannel].name).c_str());
 		}
 		else {
 			sftd_draw_text(fontGuilds, 74, 15, RGBA8(255, 255, 255, 255), 22, discordPtr->directMessages[discordPtr->currentChannel].recipients[0].username.c_str());
-			sftd_draw_text(pgf, 20, 210, RGBA8(0x8B, 0x90, 0x96, 0xFF), 15, std::string("Message @" + discordPtr->directMessages[discordPtr->currentChannel].recipients[0].username).c_str());
+			sftd_draw_text(pgf, 20, 210, RGBA8(0xDE, 0xDE, 0xDE, 0xFF), 15, std::string("Message @" + discordPtr->directMessages[discordPtr->currentChannel].recipients[0].username).c_str());
 		}
 	}
 	catch (std::exception) {
@@ -40,7 +40,7 @@ void D3DSGUI::drawBottomScreen()
 
 D3DSGUI::D3DSGUI(){
 	sf2d_init();
-	sf2d_set_clear_color(RGBA8(0x40, 0x40, 0x40, 0xFF));
+	sf2d_set_clear_color(RGBA8(0x4C, 0x4C, 0xBF, 0xBF));
 	backgroundImage = sfil_load_PNG_buffer(DiScordBackground8BIT_png,SF2D_PLACE_RAM);
 	loginFormImage = sfil_load_PNG_buffer(DiScordLoginForm8BIT_png, SF2D_PLACE_RAM);
 	loadingImage = sfil_load_PNG_buffer(DiScordLoading8BIT_png, SF2D_PLACE_RAM);
@@ -49,13 +49,13 @@ D3DSGUI::D3DSGUI(){
 	defaultAvatarImage = sfil_load_PNG_buffer(DiScordDefaultAvatar_png, SF2D_PLACE_RAM);
 	avatarCircleImage = sfil_load_PNG_buffer(DiScordAvatarCircle_png, SF2D_PLACE_RAM);
 	pgf = sftd_load_font_mem(font_ttf, font_ttf_size);
-	sftd_draw_text(pgf, 0, 0, 0, 25, "a");												//The reason we have multiple fonts is because the text is blurried otherwise
+	sftd_draw_text(pgf, 255, 255, 255, 25, "a");												//The reason we have multiple fonts is because the text is blurried otherwise
 	fontGuilds = sftd_load_font_mem(font_ttf, font_ttf_size);
-	sftd_draw_text(fontGuilds, 0, 0, 0, 22, "a");
+	sftd_draw_text(fontGuilds, 255, 255, 255, 22, "a");
 	fontUser = sftd_load_font_mem(font_ttf, font_ttf_size);
-	sftd_draw_text(fontUser, 0, 0, 0, 14, "a");
+	sftd_draw_text(fontUser, 255, 255, 255, 14, "a");
 	fontText = sftd_load_font_mem(font_ttf, font_ttf_size);
-	sftd_draw_text(fontText, 0, 0, 0, 13, "a");
+	sftd_draw_text(fontText, 255, 255, 255, 13, "a");
 
 	inputbox emailI;
 	emailI.x = 125;
@@ -220,14 +220,14 @@ void D3DSGUI::Draw(){
 				state = 3;
 			}
 		}
-		sf2d_draw_rectangle(guildXIndex, 0, 320, 240, RGBA8(0x4E, 0x56, 0x5B, 0xFF));
+		sf2d_draw_rectangle(guildXIndex, 0, 320, 240, RGBA8(0x57, 0x57, 0xD9, 0xFF));
 		for (int i = 0; i < guildBoxes.size(); i++) {
 			if (guildBoxes[i].x + guildBoxes[i].w > 0 && guildBoxes[i].x < 240) {
 				text = converter.from_bytes(discordPtr->guilds[i].name.c_str());
 				sftd_draw_wtext(fontGuilds, guildScrollX + guildXIndex + 10, guildScrollY + i * 50 + 14, RGBA8(255, 255, 255, 255), 22, text.c_str());
 			}
 		}
-		sf2d_draw_rectangle(guildScrollX + guildXIndex, 0, 320, 49, RGBA8(0x2E, 0x32, 0x35, 0xFF));
+		sf2d_draw_rectangle(guildScrollX + guildXIndex, 0, 320, 49, RGBA8(0x43, 0x43, 0xA8, 0xFF));
 		sf2d_draw_rectangle(guildScrollX + guildXIndex, 49, 320, 1, RGBA8(255, 255, 255, 255));
 		sftd_draw_text(fontGuilds, guildScrollX + guildXIndex + 10, 13, RGBA8(255, 255, 255, 255), 22, "Servers");
 		
@@ -256,20 +256,20 @@ void D3DSGUI::Draw(){
 				}
 			}
 		}
-		sf2d_draw_rectangle(channelXIndex, 0, 320, 240, RGBA8(0x4E, 0x56, 0x5B, 0xFF));
+		sf2d_draw_rectangle(channelXIndex, 0, 320, 240, RGBA8(0x57, 0x57, 0xD9, 0xFF));
 		for(int i = 0 ; i < channelBoxes.size() ; i++){
 			if (channelBoxes[i].x + channelBoxes[i].w > 0 && channelBoxes[i].x < 240) {
 				text = discordPtr->currentGuild == 0 ? converter.from_bytes(discordPtr->directMessages[i].recipients[0].username) : converter.from_bytes("#" + discordPtr->guilds[discordPtr->currentGuild].channels[i].name);
 				sftd_draw_wtext(fontGuilds, channelScrollX + channelXIndex + 10, channelScrollY + i * 50 + 14, RGBA8(255, 255, 255, 255), 22, text.c_str());
 			}
 		}
-		sf2d_draw_rectangle(channelScrollX + channelXIndex, 0, 320, 49, RGBA8(0x2E, 0x32, 0x35, 0xFF));
+		sf2d_draw_rectangle(channelScrollX + channelXIndex, 0, 320, 49, RGBA8(0x43, 0x43, 0xA8, 0xFF));
 		sf2d_draw_rectangle(channelScrollX + channelXIndex, 49, 320, 1, RGBA8(255, 255, 255, 255));
 		sftd_draw_text(fontGuilds, channelScrollX + channelXIndex + 10, 13, RGBA8(255, 255, 255, 255), 22, discordPtr->guilds[discordPtr->currentGuild].name.c_str());
 		
 	}else if(state == 4){
 		setMessageBoxes();
-		sf2d_draw_rectangle(0, 0, 400, 240, RGBA8(0x2C, 0x2F, 0x33, 0xFF));
+		sf2d_draw_rectangle(0, 0, 400, 240, RGBA8(0x61, 0x61, 0xF2, 0xFF));
 		for (int i = 0; i < messageBoxes.size(); i++) {
 			if (messageBoxes[messageBoxes.size() - i - 1].y + messageBoxes[messageBoxes.size() - i - 1].h > 0 && messageBoxes[messageBoxes.size() - i - 1].y < 240) {
 				if (discordPtr->currentGuild != 0) {
@@ -280,7 +280,7 @@ void D3DSGUI::Draw(){
 					text = converter.from_bytes(dispname);
 					sftd_draw_wtext(fontUser, messageScrollX + 70, messageBoxes[messageBoxes.size() - i - 1].y + 9, avatarVec[uInfo].colour, 14, text.c_str());
 					std::string timestamp = discordPtr->guilds[discordPtr->currentGuild].channels[discordPtr->currentChannel].messages[messageBoxes.size() - 1 - i].timestamp;
-					sftd_draw_text(fontText, messageScrollX + 75 + sftd_get_wtext_width(fontUser, 14, text.c_str()), messageBoxes[messageBoxes.size() - i - 1].y + 12, RGBA8(125, 125, 125, 255), 11, std::string(timestamp.substr(8, 2) + "/" + timestamp.substr(5, 2) + " at " + timestamp.substr(11, 5)).c_str());
+					sftd_draw_text(fontText, messageScrollX + 75 + sftd_get_wtext_width(fontUser, 14, text.c_str()), messageBoxes[messageBoxes.size() - i - 1].y + 12, RGBA8(255, 255, 255, 255), 11, std::string(timestamp.substr(8, 2) + "/" + timestamp.substr(5, 2) + " at " + timestamp.substr(11, 5)).c_str());
 					text = converter.from_bytes(wrap(discordPtr->guilds[discordPtr->currentGuild].channels[discordPtr->currentChannel].messages[messageBoxes.size() - 1 - i].content.c_str(), fontText, 13, 330));
 					sftd_draw_wtext(fontText, messageScrollX + 70, messageBoxes[messageBoxes.size() - i - 1].y + 32, RGBA8(255, 255, 255, 255), 13, text.c_str());
 				}
@@ -292,7 +292,7 @@ void D3DSGUI::Draw(){
 					text = converter.from_bytes(dispname);
 					sftd_draw_wtext(fontUser, messageScrollX + 70, messageBoxes[messageBoxes.size() - i - 1].y + 9, avatarVec[uInfo].colour, 14, text.c_str());
 					std::string timestamp = discordPtr->directMessages[discordPtr->currentChannel].messages[messageBoxes.size() - i - 1].timestamp;
-					sftd_draw_text(fontText, messageScrollX + 75 + sftd_get_wtext_width(fontUser, 14, text.c_str()), messageBoxes[messageBoxes.size() - i - 1].y + 12, RGBA8(125, 125, 125, 255), 11, std::string(timestamp.substr(8, 2) + "/" + timestamp.substr(5, 2) + " at " + timestamp.substr(11, 5)).c_str());
+					sftd_draw_text(fontText, messageScrollX + 75 + sftd_get_wtext_width(fontUser, 14, text.c_str()), messageBoxes[messageBoxes.size() - i - 1].y + 12, RGBA8(255, 255, 255, 255), 11, std::string(timestamp.substr(8, 2) + "/" + timestamp.substr(5, 2) + " at " + timestamp.substr(11, 5)).c_str());
 					text = converter.from_bytes(wrap(discordPtr->directMessages[discordPtr->currentChannel].messages[messageBoxes.size() - i - 1].content.c_str(), fontText, 13, 330));
 					sftd_draw_wtext(fontText, messageScrollX + 70, messageBoxes[messageBoxes.size() - i - 1].y + 32, RGBA8(255, 255, 255, 255), 13, text.c_str());
 				}
