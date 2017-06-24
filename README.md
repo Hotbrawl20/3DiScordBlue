@@ -3,20 +3,19 @@
 
 3DiScord is a heavily WIP Discord client for the 3DS based on [VitaCord](https://github.com/devingDev/VitaCord) by [devingDev / coderx3](https://github.com/devingDev/).  
 Note: this is based on an old version of VitaCord so no DMs and it may crash.  
-If something is wrong, contact the creator on Discord: cheuble#4952  
-**Disclaimer**: The creator is not responsible for anything that happens to you if you're using this app. Use this at your own risk.
+If something is wrong, contact me on Discord: cheuble#4952  
+Download themes [here](https://github.com/cheuble/3DiScord-themes)
+**Disclaimer**: I am not responsible for anything that happens to you if you're using this app. Use this at your own risk.
 
 ### Features
 
-* Send and receive messages in servers only 
+* Send and receive messages in servers only (no DMs **at the moment**)
 * 2FA supported
-* You can send DMs now
+
 ### Credits
 
 * UI and port by [cheuble](https://github.com/cheuble)
 * Network features by [Rinnegatamante](https://github.com/Rinnegatamante/) (from lpp3ds) 
-* Blue theme by NicoAICP (or Hotbrawl20)
-
 **All the original VitaCord staff:**
 * coderx3 (devingDev)
 * Arkanite
@@ -41,6 +40,11 @@ Once you have installed these, a simple `make` should compile it. If you have FB
  On your computer, type `make spunch`. This should install the CIA directly on your 3DS!
  
 ### Changelog 
+
+**1.2**
+* Added a theme engine
+* Fixed some crashes (again)
+* Added (partial) emoji support 
 
 **1.1** 
 * Added DMs support

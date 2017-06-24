@@ -1,0 +1,98 @@
+{
+    "clear-colour": {
+        "r": 76,
+        "g": 76,
+        "b": 191,
+        "a": 255
+    },
+    "credentials-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+    },
+    "server-channel-bg-colour": {
+        "r": 87,
+        "g": 87,
+        "b": 217,
+        "a": 255
+    },
+    "server-channel-title-bg-colour": {
+        "r": 67,
+        "g": 67,
+        "b": 168,
+        "a": 255
+    },
+    "server-channel-title-line-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+    },
+    "server-channel-title-text-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+    },
+    "server-channel-text-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+    },
+    "message-bg-colour": {
+        "r": 97,
+        "g": 97,
+        "b": 242,
+        "a": 255
+    },
+    "message-text-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+    },
+    "message-timestamp-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+    },
+    "message-user-default-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+    },
+    "messagebox-bg-colour": {
+        "r": 66,
+        "g": 66,
+        "b": 217,
+        "a": 255
+    },
+    "messagebox-text-colour": {
+        "r": 222,
+        "g": 222,
+        "b": 222,
+        "a": 255
+    },
+    "bottom-screen-name-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 255
+    },
+    "bottom-screen-info-colour": {
+        "r": 255,
+        "g": 255,
+        "b": 255,
+        "a": 230
+        },
+    "bg-colour": {
+        "r": 97,
+        "g": 97,
+        "b": 242,
+        "a": 255
+    }
+}
